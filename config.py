@@ -1,21 +1,19 @@
 import os
 from dotenv import load_dotenv
-from pyrogram import Client, filters
-from pytgcalls import PyTgCalls
+from pyrogram import Client
 
-# For Local Deploy
+# تحميل متغيرات البيئة من ملف .env المحلي بالسيرفر
 if os.path.exists(".env"):
     load_dotenv(".env")
 
-# Necessary Vars
+# المتغيرات الأساسية للتشغيل
 API_ID = int(os.getenv("API_ID"))
 API_HASH = os.getenv("API_HASH")
 SESSION = os.getenv("SESSION")
-HNDLR = os.getenv("HNDLR", ".") # تم تغييره إلى نقطة لسهولة التحكم كمساعد
+HNDLR = os.getenv("HNDLR", ".")  # رمز التحكم في الحساب (النقطة .)
 
-# إعداد العميل الرئيسي (الحساب الشخصي) والمكالمات
-bot = Client(SESSION, API_ID, API_HASH)
-call_app = PyTgCalls(bot)
-
-# رابط البث المباشر لإذاعة القرآن الكريم من القاهرة
+# رابط بث راديو إذاعة القرآن الكريم الافتراضي (إذا لم يتم وضع رابط يوتيوب)
 QURAN_STREAM_URL = "https://zeno.fm"
+
+# بناء عميل تيليجرام ومكتبة البث المباشر للمكالمات
+bot = Client(SESSION, API_ID, API_HASH)
