@@ -1,14 +1,4 @@
+pyrogram
 TgCrypto
-pyrogram==1.4.16
-requests
-aiohttp
-aiofiles
-pillow
-asyncio
-wget
-python-arq
-youtube-search-python==1.4.6
-yt-dlp
+pytgcalls
 python-dotenv
-gTTS
-googletrans==4.0.0rc1
